@@ -1,0 +1,12 @@
+[
+{
+"StoreName":"Whole Foods",
+"Items":[{"Name":"Carrot","Status":"Pending"},{"Name":"Eggs","Status":"Pending"}]
+},
+{"StoreName":"Costco",
+"Items":[{"Name":"Pods","Status":"Pending"},{"Name":"Tissues","Status":"Pending"}]
+},
+{"StoreName":"Whole Foods",
+"Items":[{"Name":"Oranges","Status":"Pending"},{"Name":"Fig","Status":"Pending"}]
+}
+]

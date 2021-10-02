@@ -15,7 +15,7 @@ namespace GroceryList
 {
     public partial class Form1 : Form
     {
-        public string filePath = @"C:\Users\nachar\source\repos\GroceryList\grocery.json";
+        public string filePath = @"E:\GitHub\GroceryList\grocery.json";
         public Form1()
         {
             InitializeComponent();
@@ -66,7 +66,7 @@ namespace GroceryList
 
             MailMessage msg = new MailMessage(From, To);
             msg.Subject = "Grocery - List";
-            msg.Body = JsonConvert.DeserializeObject(File.ReadAllText(filePath)).ToString();
+            msg.Body = Common.GetMessageBody(filePath);
 
             SmtpClient client = new SmtpClient(server);
             client.UseDefaultCredentials = true;

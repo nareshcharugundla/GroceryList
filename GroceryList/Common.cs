@@ -54,5 +54,24 @@ namespace GroceryList
             public string Name { get; set; }
             public string Status { get; set; }
         }
+
+        public static string GetMessageBody(string dataFile)
+        {
+            string json = File.ReadAllText(dataFile);
+            List<Store> stores = JsonConvert.DeserializeObject<List<Store>>(json);
+            var sb = new StringBuilder();
+            foreach (var store in stores)
+            {
+                sb.AppendLine("<b>" + store.StoreName + "</b><br/>");
+                foreach (var i in store.Items)
+                {
+                    sb.Append(i.Name + " - ");
+                    sb.AppendLine(i.Status);
+                }
+                sb.Append(Environment.NewLine);
+            }
+
+            return sb.ToString();
+        }
     }
 }
